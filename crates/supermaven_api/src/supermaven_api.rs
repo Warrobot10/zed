@@ -44,21 +44,6 @@ pub struct SupermavenAdminApi {
     http_client: Arc<dyn HttpClient>,
 }
 
-// # Get user
-// $ curl -H 'Authorization: 97420c29-61f1-4b13-8ad0-3c46e5678975' -X GET https://supermaven.com/api/external-user/rgbkrk-example-3
-// {"id":"rgbkrk-example-3","email":"rgbkrk@gmail.com","apiKey":"8ce32ec659adf07910d0dd58eb7c36f1"
-// # Create new user
-// $ curl -H 'Authorization: 97420c29-61f1-4b13-8ad0-3c46e5678975' -X POST https://supermaven.com/api/external-user -d '{"id":"rgbkrk-example-5","email":"rgbkrk@gmail.com"}'
-// {"apiKey":"8ce32ec659adf07910d0dd58eb7c36f1"}
-// $ curl -H 'Authorization: 97420c29-61f1-4b13-8ad0-3c46e5678975' -X GET https://supermaven.com/api/external-user/doesntexist
-// {"message":"User not found"}
-// $ curl -H 'Authorization: 97420c29-61f1-4b13-8ad0-3c46e5678975' -X DELETE https://supermaven.com/api/external-user/rgbkrk-example-3
-// {"message":"User deleted"}
-
-// Download agent - https://supermaven.com/api/download-path?platform=darwin&arch=arm64
-// curl "https://supermaven.com/api/download-path?platform=darwin&arch=arm64"
-// {"downloadUrl":"https://supermaven-public.s3.amazonaws.com/sm-agent/22/darwin/arm64/sm-agent","version":22,"sha256Hash":"3295027da01c41caefcd153f025241e2c9a4da038483baefd6729fa99e9feed7"}%
-
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SupermavenDownloadResponse {
